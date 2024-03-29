@@ -7,12 +7,12 @@ metadata:
     app: prac-app
 spec:
   containers:
-  - name: ngnix
-    image: ngnix:latest
+  - name: nginx
+    image: nginx:latest
     ports:
     - containerPort: 80
       protocol: TCP
-      name: ngnix
+      name: nginx
 ---
 apiVersion: v1
 kind: Service
