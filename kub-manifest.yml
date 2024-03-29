@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Podapp
+  name: podapp
   namespace: dev
   labels:
     app: prac-app
