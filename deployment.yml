@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1
+  name: app1-v1
   labels:
-    app: dep-app
+    app: dep-app1
 spec:
   strategy:
       type: Recreate
@@ -18,13 +18,13 @@ spec:
     # - {key: app, operator: Exists,}
 
     matchLables:
-      app:  dep-app
+      app:  dep-app1
   replicas: 6
   template:
     metadata:
       labels:
         name: httpdapp
-        app: dep-app
+        app: dep-app1
     spec:
       containers:
       - name: httpdapp
