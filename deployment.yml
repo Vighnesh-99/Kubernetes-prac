@@ -26,12 +26,12 @@ spec:
   template:
     metadata:
       labels:
-        name: httpdapp
+        name: nginxapp
         app: dep-app1
     spec:
       containers:
-      - name: httpdapp
-        image: httpd:latest
+      - name: nginxapp
+        image: nginx:latest
         ports:
         - containerPort: 80
           protocol: TCP
