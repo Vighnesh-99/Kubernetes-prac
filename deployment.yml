@@ -13,22 +13,22 @@ spec:
     #   maxUnavailable: 1
 
   selector:
-    matchExpressions:
-    - {key: app, operator: In, values: ['dep-app', 'depapp']}
-    - {key: app, operator: Exists,}
+    # matchExpressions:
+    # - {key: app, operator: In, values: ['dep-app', 'depapp']}
+    # - {key: app, operator: Exists,}
 
-    # matchLables:
-    #   app:  dep-app
+    matchLables:
+      app:  dep-app
   replicas: 6
   template:
     metadata:
       labels:
-        name: nginxapp
+        name: httpdapp
         app: dep-app
     spec:
       containers:
-      - name: nginxapp
-        image: nginx:latest
+      - name: httpdapp
+        image: httpd:latest
         ports:
         - containerPort: 80
           protocol: TCP
