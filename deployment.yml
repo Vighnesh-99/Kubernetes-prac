@@ -24,12 +24,13 @@ spec:
       labels:
         name: nginxapp
         app: dep-app
-    containers:
-    - name: nginxapp
-      image: nginx:latest
-      ports:
-      - containerPort: 80
-        protocol: TCP
+    spec:
+      containers:
+      - name: nginxapp
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP
 
 
 
