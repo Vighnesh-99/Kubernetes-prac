@@ -13,10 +13,10 @@ spec:
       labels:
         name: daemonapp
         app: daemonset
-    containers:
-    - name: cloudwatch
-      image: amazon/cloudwatch-agent:latest
-      ports:
-      - containerPort: 80
-        protocol: TCP
-
+    spec:
+      containers:
+      - name: cloudwatch
+        image: amazon/cloudwatch-agent:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP
