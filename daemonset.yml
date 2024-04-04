@@ -15,8 +15,8 @@ spec:
         app: daemonset
     spec:
       containers:
-      - name: cloudwatch
-        image: amazon/cloudwatch-agent:latest
+      - name: grafana
+        image: grafana/grafana:9.3.6
         ports:
         - containerPort: 80
           protocol: TCP
