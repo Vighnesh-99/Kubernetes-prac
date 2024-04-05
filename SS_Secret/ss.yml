@@ -16,7 +16,7 @@ spec:
         app: secret-app
     spec:
       containers:
-      - name: mysqldemo
+      - name: mysql-c
         image: mysql
         ports:
         - containerPort: 3306
