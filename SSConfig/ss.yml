@@ -1,1 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: configdemo
+  labels:
+    app: config-app
+spec:
+  selector:
+    matchLabels:
+      app: config-app
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        name: config-label
+        app: config-app
+    spec:
+      containers:
+      - name: mysql-container
+        image: mysql
+        ports:
+        - containerPort: 3306
+          protocol: TCP
 
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:  
+              configMapKeyRef:
+                name: config
+                key: root_pass
