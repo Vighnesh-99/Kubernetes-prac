@@ -1,1 +1,29 @@
-
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: secretdemo
+  labels:
+    app: secret-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: secret-app
+  template:
+    metadata:
+      labels:
+        name: secret
+        app: secret-app
+    spec:
+      containers:
+      - name: mysqldemo
+        image: mysql
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: root_pass
