@@ -31,7 +31,7 @@ spec:
                         memory: "64Mi"
                         cpu: "140m"
 ---
-apiVersion: autosacling/v2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa
