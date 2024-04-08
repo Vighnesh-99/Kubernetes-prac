@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadat:
+metadata:
   name: depapp
   labels:
     app: webapp
