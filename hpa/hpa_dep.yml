@@ -30,3 +30,22 @@ spec:
                   limits:     
                         memory: "64Mi"
                         cpu: "140m"
+---
+apiVersion: autosacling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: depapp
+  minReplicas:  1
+  maxReplicas:  4
+  metrics:  
+    - type: Resource
+      resources:
+        name:  cpu
+        target: 
+          type: Utilization
+          averageUtilization: 50
